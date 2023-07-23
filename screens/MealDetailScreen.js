@@ -11,6 +11,7 @@ import { MEALS } from '../data/dummy-data';
 import MealDetails from '../components/MealDetails';
 import Subtitle from '../components/MealDetail/Subtitle';
 import List from '../components/MealDetail/List';
+import IconButton from '../components/IconButton';
 
 const MealDetailScreen = ({ route, navigation }) => {
   const mealId = route.params.mealId;
@@ -23,7 +24,13 @@ const MealDetailScreen = ({ route, navigation }) => {
   }, []);
 
   const headerRight = useMemo(
-    () => <Button title="Tap me!" onPress={headerButtonPressHandler} />,
+    () => (
+      <IconButton
+        onPress={headerButtonPressHandler}
+        icon="star"
+        color="white"
+      />
+    ),
     [headerButtonPressHandler]
   );
 
